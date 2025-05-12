@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://dwnpnk0eeitby"]
+[gd_scene load_steps=13 format=4 uid="uid://dwnpnk0eeitby"]
 
 [ext_resource type="Texture2D" uid="uid://cc57k8lutb26v" path="res://Assets/Tilesets/grass_tileset.png" id="1_jlg5k"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_oksjd"]
 [ext_resource type="Texture2D" uid="uid://ck3ty8o68v44e" path="res://Assets/Sprites/Player/placeholder.png" id="3_rowts"]
 [ext_resource type="Script" path="res://Scripts/enemies.gd" id="4_v4bht"]
+[ext_resource type="Texture2D" uid="uid://c6taos605h8fc" path="res://Assets/Sprites/UI/heart.png" id="5_a58uq"]
+[ext_resource type="Texture2D" uid="uid://bmakoyrk5y6j3" path="res://Assets/Sprites/UI/breath.png" id="6_lldfs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lav2b"]
 texture = ExtResource("1_jlg5k")
@@ -252,9 +254,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -226.0
-offset_top = -18.0
+offset_top = -15.0
 offset_right = 227.0
-offset_bottom = -13.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -265,6 +267,19 @@ step = 1.0
 value = 100.0
 rounded = true
 show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="UI/HealthBar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -20.0
+offset_right = 7.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture = ExtResource("5_a58uq")
+stretch_mode = 3
 
 [node name="BreathBar" type="ProgressBar" parent="UI"]
 anchors_preset = 7
@@ -286,3 +301,16 @@ step = 1.0
 value = 100.0
 rounded = true
 show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="UI/BreathBar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -20.0
+offset_right = 7.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture = ExtResource("6_lldfs")
+stretch_mode = 3
